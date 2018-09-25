@@ -39,7 +39,7 @@ public class HomeActivity extends AppCompatActivity {
 
                     return true;
                 case R.id.estabelecimentos:
-                    startActivity(new Intent(HomeActivity.this, MapsActivity.class));
+                    startActivity(new Intent(HomeActivity.this, ListaEstabelecimentosActivity.class));
                     return true;
 
                 case R.id.sobre_nos:

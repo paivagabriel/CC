@@ -40,7 +40,8 @@
             android:label="@string/title_activity_sobre_nos2"
             android:theme="@style/AppTheme" />
         <activity android:name=".HomeActivity" />
-        <activity android:name=".PromocoesActivity"></activity>
+        <activity android:name=".PromocoesActivity" />
+        <activity android:name=".ListaEstabelecimentosActivity"></activity>
     </application>
 
 </manifest>

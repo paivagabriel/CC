@@ -49,7 +49,7 @@ public class PromocoesActivity extends AppCompatActivity {
 mWebView.reload();
                     return true;
                 case R.id.estabelecimentos:
-                    startActivity(new Intent(PromocoesActivity.this, MapsActivity.class));
+                    startActivity(new Intent(PromocoesActivity.this, ListaEstabelecimentosActivity.class));
                     return true;
 
                 case R.id.sobre_nos:
