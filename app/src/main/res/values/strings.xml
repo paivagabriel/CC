@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">Celebrate Club</string>
+    <string name="title_activity_home">HomeActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="title_activity_sobre_nos">SobreNosActivity</string>
+    <string name="title_activity_promocoes">PromocoesActivity</string>
+    <string name="title_activity_sobre_nos2">Celebrate Club</string>
+    <string name="large_text"><b>Quem somos?</b>\nSomos um grupo de pessoas que tem como objetivo principal encantar clientes, colaboradores e parceiros.
+\nSomos a Celebrate Club, uma startup  que busca desenvolver soluções digitais e práticas que facilitem a relação entre clientes e fornecedores.\nÉ muito mais do que fidelizar.\nÉ tratar os clientes e parceiros da melhor forma possível, oferecendo benefícios reais e com total transparência.\nÉ mais do que trabalhar.\nÉ proporcionar um ambiente amigável, com crescimento mútuo e compartilhamento de conhecimentos.\n
+\n<b>Missão:</b>\nAplicar tecnologia em processos que aprimorem a relação entre empresas e consumidores, gerando vantagens para todos.\n
+\n<b>Visão:</b>\nSer um clube de fidelidade digital que ofereça os melhores benefícios para os consumidores e facilite o dia a dia dos estabelecimentos. \n
+\n<b>Valores:</b>\n
+        •	Atendimento humanizado;\n
+•	Inovação como prioridade;\n
+•	Valorização e desenvolvimento de pessoas;\n
+•	Comprometimento socioambiental;\n
+•	Ética e transparência.\n
+
+
+</string>
+    <string name="action_settings">Settings</string>
+</resources>
