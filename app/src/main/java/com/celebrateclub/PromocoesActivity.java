@@ -96,6 +96,8 @@ mWebView.reload();
         webSettings.setAppCacheEnabled(true);
         webSettings.setJavaScriptCanOpenWindowsAutomatically(true);
         webSettings.setDatabaseEnabled(true);
+        webSettings.setMixedContentMode(WebSettings.MIXED_CONTENT_ALWAYS_ALLOW);
+
         mWebView.loadUrl("http://www.celebrateclub.com.br/sorteio/");
 
         mWebView.setWebViewClient(new WebViewClient() {
