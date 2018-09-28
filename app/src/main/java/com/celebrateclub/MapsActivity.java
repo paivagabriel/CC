@@ -18,6 +18,7 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -50,8 +51,10 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.Locale;
+import java.util.Timer;
+import java.util.TimerTask;
 
-public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
+public class MapsActivity extends FragmentActivity implements OnMapReadyCallback, GoogleMap.OnMarkerClickListener {
 
     private GoogleMap mMap;
 
@@ -72,8 +75,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     Marker marker;
     public String geoUri;
 
-    double latWaze ;
-    double longWaze ;
+    double latWaze;
+    double longWaze;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -122,6 +126,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     }
 
+
+
     private void verificarConexaoInternet() {
         cm = (ConnectivityManager) getApplicationContext().getSystemService(Context.CONNECTIVITY_SERVICE);
 
@@ -132,7 +138,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         if (isConnected) {
 
         } else {
-            Toast.makeText(this, "Você está sem conexão de internet, algumas funcionalidades ficaram inativas", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Ops... Verifique sua conexão de internet", Toast.LENGTH_SHORT).show();
+            startActivity(new Intent(MapsActivity.this, SobreNosActivity.class));
         }
 
     }
@@ -185,17 +192,14 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         ivWaze.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                try
-                {
+                try {
                     // Launch Waze to look for Hawaii:
-                    String url = "https://www.waze.com/ul?ll="+latWaze+"%2C"+longWaze+"&navigate=yes&zoom=17";
-                    Intent intent = new Intent( Intent.ACTION_VIEW, Uri.parse( url ) );
-                    startActivity( intent );
-                }
-                catch ( ActivityNotFoundException ex  )
-                {
+                    String url = "https://www.waze.com/ul?ll=" + latWaze + "%2C" + longWaze + "&navigate=yes&zoom=17";
+                    Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+                    startActivity(intent);
+                } catch (ActivityNotFoundException ex) {
 
-                    Intent intent = new Intent( Intent.ACTION_VIEW, Uri.parse( "market://details?id=com.waze" ) );
+                    Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=com.waze"));
                     startActivity(intent);
                 }
             }
@@ -204,18 +208,15 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             @Override
             public void onClick(View v) {
 
-                try
-                {
+                try {
                     Intent intent_local = new Intent(Intent.ACTION_VIEW, Uri.parse(geoUri));
                     intent_local.setFlags(Intent.FLAG_ACTIVITY_FORWARD_RESULT);
                     intent_local.setFlags(Intent.FLAG_ACTIVITY_PREVIOUS_IS_TOP);
                     intent_local.setData(Uri.parse(geoUri));
                     startActivity(intent_local);
-                }
-                catch ( ActivityNotFoundException ex  )
-                {
+                } catch (ActivityNotFoundException ex) {
 
-                    Intent intent = new Intent( Intent.ACTION_VIEW, Uri.parse( "market://details?id=com.google.android.apps.maps" ) );
+                    Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=com.google.android.apps.maps"));
                     startActivity(intent);
                 }
 
@@ -289,5 +290,11 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         });
     }
 
+    @Override
+    public boolean onMarkerClick(Marker marker) {
+        return false;
+
+
+    }
 }
 

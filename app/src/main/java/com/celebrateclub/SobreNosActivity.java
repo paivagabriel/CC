@@ -32,14 +32,35 @@ public class SobreNosActivity extends AppCompatActivity {
             switch (item.getItemId()) {
 
                 case R.id.promocoes:
+                    cm = (ConnectivityManager) getApplicationContext().getSystemService(Context.CONNECTIVITY_SERVICE);
 
-startActivity(new Intent(SobreNosActivity.this, PromocoesActivity.class));
+                    activeNetwork = cm.getActiveNetworkInfo();
+                    isConnected = activeNetwork != null &&
+                            activeNetwork.isConnectedOrConnecting();
 
+                    if (isConnected) {
+                        startActivity(new Intent(SobreNosActivity.this, PromocoesActivity.class));
+                    } else {
+                        Toast.makeText(SobreNosActivity.this, "Ops... Verifique sua conexão de internet", Toast.LENGTH_SHORT).show();
 
+                    }
                     return true;
 
                 case R.id.estabelecimentos:
-                    startActivity(new Intent(SobreNosActivity.this, MapsActivity.class));
+
+                    cm = (ConnectivityManager) getApplicationContext().getSystemService(Context.CONNECTIVITY_SERVICE);
+
+                    activeNetwork = cm.getActiveNetworkInfo();
+                    isConnected = activeNetwork != null &&
+                            activeNetwork.isConnectedOrConnecting();
+
+                    if (isConnected) {
+                        startActivity(new Intent(SobreNosActivity.this, MapsActivity.class));
+                    } else {
+                        Toast.makeText(SobreNosActivity.this, "Ops... Verifique sua conexão de internet", Toast.LENGTH_SHORT).show();
+
+                    }
+
                     return true;
 
                 case R.id.sobre_nos:
@@ -61,8 +82,6 @@ startActivity(new Intent(SobreNosActivity.this, PromocoesActivity.class));
         setSupportActionBar(toolbar);
 
 
-
-
         cm = (ConnectivityManager) getApplicationContext().getSystemService(Context.CONNECTIVITY_SERVICE);
 
         activeNetwork = cm.getActiveNetworkInfo();
@@ -70,13 +89,12 @@ startActivity(new Intent(SobreNosActivity.this, PromocoesActivity.class));
                 activeNetwork.isConnectedOrConnecting();
 
 
-
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent mailIntent = new Intent(Intent.ACTION_VIEW);
-                Uri data = Uri.parse("mailto:?subject="+"&to=" + "suporte@celebrateclub.com");
+                Uri data = Uri.parse("mailto:?subject=" + "&to=" + "suporte@celebrateclub.com");
                 mailIntent.setData(data);
                 startActivity(Intent.createChooser(mailIntent, "Contato Celebrate Club"));
             }
