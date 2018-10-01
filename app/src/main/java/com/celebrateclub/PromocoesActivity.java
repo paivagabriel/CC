@@ -1,6 +1,7 @@
 package com.celebrateclub;
 
 import android.Manifest;
+import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -17,6 +18,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.Window;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
@@ -45,8 +47,11 @@ public class PromocoesActivity extends AppCompatActivity {
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             switch (item.getItemId()) {
+                case R.id.home:
+                    startActivity(new Intent(PromocoesActivity.this, HomeActivity.class));
+                    return true;
                 case R.id.promocoes:
-mWebView.reload();
+                    mWebView.reload();
                     return true;
                 case R.id.estabelecimentos:
                     startActivity(new Intent(PromocoesActivity.this, MapsActivity.class));
@@ -69,6 +74,8 @@ mWebView.reload();
 
 
         checkPermissions();
+        detectFirstRun();
+
         cm = (ConnectivityManager) getApplicationContext().getSystemService(Context.CONNECTIVITY_SERVICE);
 
         activeNetwork = cm.getActiveNetworkInfo();
@@ -111,6 +118,51 @@ mWebView.reload();
 
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+
+    }
+
+    private void detectFirstRun() {
+        boolean firstrun = getSharedPreferences("PREFERENCE", MODE_PRIVATE).getBoolean("firstrun", true);
+        if (firstrun) {
+            //... Display the dialog message here ...
+            // Save the state
+            getSharedPreferences("PREFERENCE", MODE_PRIVATE)
+                    .edit()
+                    .putBoolean("firstrun", false)
+                    .apply();
+            abrirDialog();
+        } else {
+           
+        }
+    }
+
+    private void abrirDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        View view = getLayoutInflater().inflate(R.layout.dialog_promocao, null);
+        final AlertDialog alert = builder.create();
+        builder.setCancelable(false);
+
+        Button btnSim = view.findViewById(R.id.btnDialogSim);
+        Button btnNao = view.findViewById(R.id.btnDialogNao);
+
+        btnSim.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                alert.dismiss();
+            }
+        });
+
+        btnNao.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(PromocoesActivity.this, HomeActivity.class));
+            }
+        });
+
+
+        alert.setView(view);
+        alert.show();
+
 
     }
 

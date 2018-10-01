@@ -31,6 +31,20 @@ public class SobreNosActivity extends AppCompatActivity {
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             switch (item.getItemId()) {
 
+                case R.id.home:
+                    cm = (ConnectivityManager) getApplicationContext().getSystemService(Context.CONNECTIVITY_SERVICE);
+
+                    activeNetwork = cm.getActiveNetworkInfo();
+                    isConnected = activeNetwork != null &&
+                            activeNetwork.isConnectedOrConnecting();
+
+                    if (isConnected) {
+                        startActivity(new Intent(SobreNosActivity.this, HomeActivity.class));
+                    } else {
+                        Toast.makeText(SobreNosActivity.this, "Ops... Verifique sua conexão de internet", Toast.LENGTH_SHORT).show();
+
+                    }
+                    return true;
                 case R.id.promocoes:
                     cm = (ConnectivityManager) getApplicationContext().getSystemService(Context.CONNECTIVITY_SERVICE);
 

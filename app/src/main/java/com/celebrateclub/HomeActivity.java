@@ -22,7 +22,6 @@ import android.widget.TextView;
 import com.celebrateclub.MapsConfig.Permissao;
 
 
-
 public class HomeActivity extends AppCompatActivity {
 
     private TextView mTextMessage;
@@ -45,6 +44,9 @@ public class HomeActivity extends AppCompatActivity {
                 case R.id.sobre_nos:
                     startActivity(new Intent(HomeActivity.this, SobreNosActivity.class));
                     return true;
+                case R.id.promocoes:
+                    startActivity(new Intent(HomeActivity.this, PromocoesActivity.class));
+                    return true;
 
 
             }
@@ -60,7 +62,6 @@ public class HomeActivity extends AppCompatActivity {
         validarPermissoes();
 
 
-
         mWebView = (WebView) findViewById(R.id.activity_main_webview);
         progressWebView = findViewById(R.id.progressBar);
 
@@ -70,6 +71,7 @@ public class HomeActivity extends AppCompatActivity {
         webSettings.setAppCacheEnabled(true);
         webSettings.setJavaScriptCanOpenWindowsAutomatically(true);
         webSettings.setDatabaseEnabled(true);
+        webSettings.setMixedContentMode(WebSettings.MIXED_CONTENT_ALWAYS_ALLOW);
         mWebView.loadUrl("https://rh.mazza.tech/web/guest/webuser");
 
         mWebView.setWebViewClient(new WebViewClient() {

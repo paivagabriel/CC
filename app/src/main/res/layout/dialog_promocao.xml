@@ -29,16 +29,6 @@
             android:textColor="@android:color/white" />
 
         <Button
-            android:id="@+id/btndialotest"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_weight="1"
-            android:background="@drawable/btn_drawable"
-            android:text="Sim"
-            android:textColor="@android:color/white" />
-
-        <Button
             android:id="@+id/btnDialogSim"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
