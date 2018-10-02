@@ -1,6 +1,7 @@
 package com.celebrateclub;
 
 import android.Manifest;
+import android.app.ProgressDialog;
 import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -78,10 +79,15 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     double latWaze;
     double longWaze;
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps);
+
+
+
 
         mUsers = FirebaseDatabase.getInstance().getReference("estabelecimentos");
         mUsers.push().setValue(marker);
@@ -177,6 +183,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
             }
         });
+
+
 
 
     }
