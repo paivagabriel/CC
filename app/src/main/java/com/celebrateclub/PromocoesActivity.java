@@ -114,6 +114,8 @@ public class PromocoesActivity extends AppCompatActivity {
                 progressWebView.setVisibility(View.INVISIBLE);
                 super.onPageFinished(view, url);
             }
+
+
         });
 
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
@@ -132,7 +134,7 @@ public class PromocoesActivity extends AppCompatActivity {
                     .apply();
             abrirDialog();
         } else {
-           
+
         }
     }
 

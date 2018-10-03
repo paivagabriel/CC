@@ -2,6 +2,12 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+    <!--<item-->
+        <!--android:id="@+id/lista"-->
+        <!--android:icon="@drawable/ic_list"-->
+        <!--android:title="Lista"-->
+        <!--app:showAsAction="always|withText" />-->
+
     <item
         android:id="@+id/regiao"
         android:icon="@drawable/ic_location_on"
@@ -13,6 +19,8 @@
         android:icon="@drawable/ic_location_on"
         android:title="Ao redor"
         app:showAsAction="always|withText" />
+
+
 
 
 </menu>

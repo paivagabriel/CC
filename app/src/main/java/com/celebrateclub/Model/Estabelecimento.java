@@ -3,9 +3,19 @@ package com.celebrateclub.Model;
 public class Estabelecimento {
     String nomeEstabelecimento;
     Double latitude, longitude;
+    String enderecoEstabelecimento;
 
 
     public Estabelecimento() {
+    }
+
+
+    public String getEnderecoEstabelecimento() {
+        return enderecoEstabelecimento;
+    }
+
+    public void setEnderecoEstabelecimento(String enderecoEstabelecimento) {
+        this.enderecoEstabelecimento = enderecoEstabelecimento;
     }
 
     public Double getLatitude() {

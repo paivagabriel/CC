@@ -118,6 +118,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                     case R.id.regiao:
                         mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(l.getLatitude(), l.getLongitude()), 10.0f));
                         return true;
+//                    case R.id.lista:
+//                       startActivity(new Intent(MapsActivity.this, ListaEstabelecimentosActivity.class));
+//                        return true;
 
 
                 }
