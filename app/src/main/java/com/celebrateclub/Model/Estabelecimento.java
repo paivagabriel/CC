@@ -4,11 +4,31 @@ public class Estabelecimento {
     String nomeEstabelecimento;
     Double latitude, longitude;
     String enderecoEstabelecimento;
+    String colorBackground;
+    String colorText;
+
+    public String getColorText() {
+        return colorText;
+    }
+
+    public void setColorText(String colorText) {
+        this.colorText = colorText;
+    }
+
+
 
 
     public Estabelecimento() {
     }
 
+
+    public String getColorBackground() {
+        return colorBackground;
+    }
+
+    public void setColorBackground(String colorBackground) {
+        this.colorBackground = colorBackground;
+    }
 
     public String getEnderecoEstabelecimento() {
         return enderecoEstabelecimento;

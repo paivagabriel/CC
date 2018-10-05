@@ -1,8 +1,10 @@
 package com.celebrateclub;
 
+import android.graphics.Color;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
@@ -28,8 +30,9 @@ public class ListaEstabelecimentosActivity extends AppCompatActivity {
     private Query query, querySearch;
     private ImageView btnSearch;
     private AutoCompleteTextView editSearch;
-
+    private CardView cardEstabelecimentos;
     ArrayAdapter<String> autoComplete;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +47,7 @@ public class ListaEstabelecimentosActivity extends AppCompatActivity {
         recyclerEstabelecimentos.setHasFixedSize(true);
         recyclerEstabelecimentos.setLayoutManager(new LinearLayoutManager(this));
         editSearch.setAdapter(autoComplete);
+
         btnSearch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -86,9 +90,12 @@ public class ListaEstabelecimentosActivity extends AppCompatActivity {
             @Override
             protected void populateViewHolder(EstabelecimentoViewHolder viewHolder, Estabelecimento model, int position) {
 
+
                 viewHolder.setTitle(model.getNomeEstabelecimento());
 
                 viewHolder.setEndereco(String.valueOf(model.getEnderecoEstabelecimento()));
+                viewHolder.setColorBackground(String.valueOf(model.getColorBackground()));
+
 
             }
         };
@@ -109,6 +116,8 @@ public class ListaEstabelecimentosActivity extends AppCompatActivity {
 
                 viewHolder.setEndereco(String.valueOf(model.getEnderecoEstabelecimento()));
 
+                viewHolder.setColorBackground(String.valueOf(model.getColorBackground()));
+
             }
         };
 
@@ -121,19 +130,36 @@ public class ListaEstabelecimentosActivity extends AppCompatActivity {
         public EstabelecimentoViewHolder(@NonNull View itemView) {
             super(itemView);
             view = itemView;
+
         }
 
         public void setTitle(String title) {
-            TextView post_title = view.findViewById(R.id.nomeEstabelecimento);
-            post_title.setText(title);
+           TextView post_title = view.findViewById(R.id.nomeEstabelecimento);
+           post_title.setText(title);
 
         }
-
 
 
         public void setEndereco(String enderecoEstabelecimento) {
             TextView longitude = view.findViewById(R.id.ruaEstabelecimento);
             longitude.setText(enderecoEstabelecimento);
+
+        }
+
+        public void setColorBackground(String color) {
+            CardView cardEstabelecimento = view.findViewById(R.id.cardEstabelecimento);
+            try {
+                cardEstabelecimento.setCardBackgroundColor(Color.parseColor(color));
+            } catch (Exception e) {
+                cardEstabelecimento.setCardBackgroundColor(Color.WHITE);
+            }
+
+
+        }
+
+        public void setTextColor(String color) {
+
+
 
         }
     }

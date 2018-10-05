@@ -1,27 +1,27 @@
 {
   "project_info": {
-    "project_number": "717982738459",
-    "firebase_url": "https://celebrate-club-usuarios.firebaseio.com",
-    "project_id": "celebrate-club-usuarios",
-    "storage_bucket": "celebrate-club-usuarios.appspot.com"
+    "project_number": "859360529956",
+    "firebase_url": "https://celebrate-club-testes.firebaseio.com",
+    "project_id": "celebrate-club-testes",
+    "storage_bucket": "celebrate-club-testes.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:717982738459:android:f4510f95a43de004",
+        "mobilesdk_app_id": "1:859360529956:android:216c765d39048aee",
         "android_client_info": {
-          "package_name": "com.celebrate.celebrateestabelecimentos"
+          "package_name": "com.celebrateclub"
         }
       },
       "oauth_client": [
         {
-          "client_id": "717982738459-9geig7o5sotslgcruip7uqi3n5ecvuh9.apps.googleusercontent.com",
+          "client_id": "859360529956-r0i026ao0ccrhgjodtflgo480rfg56sn.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyAyIW-gXRxndSxf7uDBk6HnsXxgWAJFzuw"
+          "current_key": "AIzaSyBR5eO3M5XhS1VpK1KJuc1YvIYNX_2_-cQ"
         }
       ],
       "services": {
@@ -31,167 +31,6 @@
         "appinvite_service": {
           "status": 1,
           "other_platform_oauth_client": []
-        },
-        "ads_service": {
-          "status": 2
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:717982738459:android:9807acdb589f2fef",
-        "android_client_info": {
-          "package_name": "com.celebrate.estabelecimentoscelebrateclub"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "717982738459-90dss0k2fqb1s7q8ij20b9834cpbaajd.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.celebrate.estabelecimentoscelebrateclub",
-            "certificate_hash": "98aeb72b6a611ebf2c3bd704c44d545c31b6ee4a"
-          }
-        },
-        {
-          "client_id": "717982738459-1403dchgrj6ep3r5vbfjgsse63rousc2.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.celebrate.estabelecimentoscelebrateclub",
-            "certificate_hash": "5727226790f176dbec068ea2a93fae57457b915a"
-          }
-        },
-        {
-          "client_id": "717982738459-9geig7o5sotslgcruip7uqi3n5ecvuh9.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyAyIW-gXRxndSxf7uDBk6HnsXxgWAJFzuw"
-        }
-      ],
-      "services": {
-        "analytics_service": {
-          "status": 1
-        },
-        "appinvite_service": {
-          "status": 2,
-          "other_platform_oauth_client": [
-            {
-              "client_id": "717982738459-9geig7o5sotslgcruip7uqi3n5ecvuh9.apps.googleusercontent.com",
-              "client_type": 3
-            },
-            {
-              "client_id": "717982738459-cland6lh8n16t8rbmh4ujt07tq86udf0.apps.googleusercontent.com",
-              "client_type": 2,
-              "ios_info": {
-                "bundle_id": "cc.celebrate-club"
-              }
-            }
-          ]
-        },
-        "ads_service": {
-          "status": 2
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:717982738459:android:216c765d39048aee",
-        "android_client_info": {
-          "package_name": "com.celebrateclub"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "717982738459-en2s6525ga9r9hf0v1ed9scb1irkb0hu.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.celebrateclub",
-            "certificate_hash": "5727226790f176dbec068ea2a93fae57457b915a"
-          }
-        },
-        {
-          "client_id": "717982738459-9geig7o5sotslgcruip7uqi3n5ecvuh9.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyAyIW-gXRxndSxf7uDBk6HnsXxgWAJFzuw"
-        }
-      ],
-      "services": {
-        "analytics_service": {
-          "status": 1
-        },
-        "appinvite_service": {
-          "status": 2,
-          "other_platform_oauth_client": [
-            {
-              "client_id": "717982738459-9geig7o5sotslgcruip7uqi3n5ecvuh9.apps.googleusercontent.com",
-              "client_type": 3
-            },
-            {
-              "client_id": "717982738459-cland6lh8n16t8rbmh4ujt07tq86udf0.apps.googleusercontent.com",
-              "client_type": 2,
-              "ios_info": {
-                "bundle_id": "cc.celebrate-club"
-              }
-            }
-          ]
-        },
-        "ads_service": {
-          "status": 2
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:717982738459:android:80f77ddee77888fd",
-        "android_client_info": {
-          "package_name": "com.celebrateclubwebstore"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "717982738459-6cmqs7ei8lvag7lm8s6v1ih5gptoons1.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.celebrateclubwebstore",
-            "certificate_hash": "5727226790f176dbec068ea2a93fae57457b915a"
-          }
-        },
-        {
-          "client_id": "717982738459-9geig7o5sotslgcruip7uqi3n5ecvuh9.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyAyIW-gXRxndSxf7uDBk6HnsXxgWAJFzuw"
-        }
-      ],
-      "services": {
-        "analytics_service": {
-          "status": 1
-        },
-        "appinvite_service": {
-          "status": 2,
-          "other_platform_oauth_client": [
-            {
-              "client_id": "717982738459-9geig7o5sotslgcruip7uqi3n5ecvuh9.apps.googleusercontent.com",
-              "client_type": 3
-            },
-            {
-              "client_id": "717982738459-cland6lh8n16t8rbmh4ujt07tq86udf0.apps.googleusercontent.com",
-              "client_type": 2,
-              "ios_info": {
-                "bundle_id": "cc.celebrate-club"
-              }
-            }
-          ]
         },
         "ads_service": {
           "status": 2
